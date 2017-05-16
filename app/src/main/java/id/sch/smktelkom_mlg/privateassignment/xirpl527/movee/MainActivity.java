@@ -1,5 +1,6 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl527.movee;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -53,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
+
     }
 
 
@@ -71,10 +73,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        /*if (id == R.id.action_settings) {
+        if (id == R.id.action_settings) {
             startActivity(new Intent(MainActivity.this, ProfilesActivity.class));
             return true;
-        }*/
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -125,7 +127,10 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            return PlaceholderFragment.newInstance(position + 1);
+            if (position == 0)
+                return new HomeFragment();
+            else
+                return new SavedFragment();
         }
 
         @Override
