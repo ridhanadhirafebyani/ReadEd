@@ -18,11 +18,15 @@ import java.util.ArrayList;
 public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.ViewHolder> {
 
     private final Context context;
-    ArrayList<SavedItemList> fItem = new ArrayList<>();
+    ArrayList<SavedItemList> wItem = new ArrayList<>();
 
-    public SavedAdapter(ArrayList<SavedItemList> favouriteItem, Context context) {
-        this.fItem = favouriteItem;
+    public SavedAdapter(ArrayList<SavedItemList> wishItem, Context context) {
+        this.wItem = wishItem;
         this.context = context;
+
+/*
+        SugarContext.init(context);
+        SugarContext.terminate();*/
     }
 
 
@@ -31,17 +35,18 @@ public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.ViewHolder> 
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.saved_item_list, parent, false);
         ViewHolder vh = new ViewHolder(v);
         return vh;
+
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
-        final SavedItemList favouriteItem = fItem.get(position);
-        holder.tvJudul.setText(favouriteItem.judul);
-        holder.tvOverview.setText(favouriteItem.overview);
+        final SavedItemList wishItem = wItem.get(position);
+        holder.tvJudul.setText(wishItem.judul);
+        holder.tvOverview.setText(wishItem.overview);
 
         Glide
                 .with(context)
-                .load("http://image.tmdb.org/t/p/w500" + favouriteItem.images)
+                .load("http://image.tmdb.org/t/p/w500" + wishItem.images)
                 .placeholder(R.mipmap.ic_launcher_round)
                 .error(R.mipmap.ic_launcher)
                 .into(holder.imgUrl);
@@ -49,8 +54,8 @@ public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.ViewHolder> 
         holder.buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final SavedItemList savedItemList1 = fItem.get(position);
-                fItem.remove(position);
+                final SavedItemList savedItemList1 = wItem.get(position);
+                wItem.remove(position);
                 savedItemList1.delete();
                 SavedAdapter.this.notifyDataSetChanged();
 
@@ -63,8 +68,9 @@ public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return fItem.size();
+        return wItem.size();
     }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView tvJudul;

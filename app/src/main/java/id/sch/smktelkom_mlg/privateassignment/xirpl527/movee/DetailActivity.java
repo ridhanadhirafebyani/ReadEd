@@ -26,7 +26,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity {
-    private static final String URL_DATA = "https://api.themoviedb.org/3/movie/top_rated?api_key=1029a4f1003dd4d03181bb24eda5b026";
+    private static final String URL_DATA = "https://api.themoviedb.org/3/movie/top_rated?api_key=2cbf9519af8b992118229bfbb1fb2dd3";
     public TextView tvJudul;
     public TextView tvJudulAsli;
     public TextView tvTahun;
@@ -67,7 +67,7 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 doSimpan();
-                Snackbar.make(view, "SAVED", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Added to wishlist", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -122,11 +122,11 @@ public class DetailActivity extends AppCompatActivity {
 
                             setTitle(" ");
 
-                            tvJudul.setText(o.getString("title"));
-                            tvJudulAsli.setText(o.getString("original_title"));
-                            tvRating.setText(o.getString("vote_average"));
-                            tvTahun.setText(o.getString("release_date"));
-                            overview.setText(o.getString("overview"));
+                            tvJudul.setText("Title : " + o.getString("title"));
+                            tvJudulAsli.setText("Ori Title : " + o.getString("original_title"));
+                            tvRating.setText("Vote Average : " + o.getString("vote_average"));
+                            tvTahun.setText("Release Date : " + o.getString("release_date"));
+                            overview.setText("Overview : " + o.getString("overview"));
                             url = o.getString("backdrop_path");
 
                             Glide

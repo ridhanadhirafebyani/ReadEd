@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class SavedFragment extends Fragment {
 
-    ArrayList<SavedItemList> fList;
+    ArrayList<SavedItemList> wList;
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
 
@@ -32,14 +32,13 @@ public class SavedFragment extends Fragment {
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerViewSaved);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        fList = new ArrayList<>();
+        wList = new ArrayList<>();
 
-        adapter = new SavedAdapter(fList, getActivity().getApplicationContext());
+        adapter = new SavedAdapter(wList, getActivity().getApplicationContext());
         recyclerView.setAdapter(adapter);
 
-        fList.addAll(SavedItemList.listAll(SavedItemList.class));
+        wList.addAll(SavedItemList.listAll(SavedItemList.class));
         adapter.notifyDataSetChanged();
-
 
         return view;
 
@@ -56,8 +55,8 @@ public class SavedFragment extends Fragment {
     }
 
     private void actionView() {
-        fList.clear();
-        fList.addAll(SavedItemList.listAll(SavedItemList.class));
+        wList.clear();
+        wList.addAll(SavedItemList.listAll(SavedItemList.class));
         adapter.notifyDataSetChanged();
     }
 }
