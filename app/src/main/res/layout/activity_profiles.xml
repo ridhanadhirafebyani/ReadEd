@@ -20,25 +20,32 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_horizontal_margin"
-                android:text="Nama : Ridha Nadhira Febyani" />
+                android:text="About Me"
+                android:textSize="24pt" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_horizontal_margin"
-                android:text="Kelas : XI RPL 5" />
+                android:text="Name : Ridha Nadhira Febyani" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_horizontal_margin"
-                android:text="No Absensi : 27" />
+                android:text="Class : XI Programming 5" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/activity_horizontal_margin"
-                android:text="Sekolah : Telkom School SMK Telkom Malang" />
+                android:text="Presence Number : 27" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/activity_horizontal_margin"
+                android:text="Telkom School SMK Telkom Malang" />
 
 
         </LinearLayout>

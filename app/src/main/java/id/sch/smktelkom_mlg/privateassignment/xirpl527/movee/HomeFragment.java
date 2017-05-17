@@ -1,7 +1,6 @@
 package id.sch.smktelkom_mlg.privateassignment.xirpl527.movee;
 
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -69,9 +68,9 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadRecyclerViewData() {
-        final ProgressDialog progressDialog = new ProgressDialog(getActivity());
+      /*  final ProgressDialog progressDialog = new ProgressDialog(getActivity());
         progressDialog.setMessage("Loading data...");
-        progressDialog.show();
+        progressDialog.show();*/
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 URL_DATA,

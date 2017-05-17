@@ -122,11 +122,11 @@ public class DetailActivity extends AppCompatActivity {
 
                             setTitle(" ");
 
-                            tvJudul.setText("Title : " + o.getString("title"));
-                            tvJudulAsli.setText("Ori Title : " + o.getString("original_title"));
-                            tvRating.setText("Vote Average : " + o.getString("vote_average"));
-                            tvTahun.setText("Release Date : " + o.getString("release_date"));
-                            overview.setText("Overview : " + o.getString("overview"));
+                            tvJudul.setText(o.getString("title"));
+                            tvJudulAsli.setText(o.getString("original_title"));
+                            tvRating.setText(o.getString("vote_average"));
+                            tvTahun.setText(o.getString("release_date"));
+                            overview.setText(o.getString("overview"));
                             url = o.getString("backdrop_path");
 
                             Glide

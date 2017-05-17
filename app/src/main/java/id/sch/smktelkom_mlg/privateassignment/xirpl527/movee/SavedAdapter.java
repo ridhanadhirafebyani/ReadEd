@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -23,10 +24,6 @@ public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.ViewHolder> 
     public SavedAdapter(ArrayList<SavedItemList> wishItem, Context context) {
         this.wItem = wishItem;
         this.context = context;
-
-/*
-        SugarContext.init(context);
-        SugarContext.terminate();*/
     }
 
 
@@ -43,6 +40,8 @@ public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.ViewHolder> 
         final SavedItemList wishItem = wItem.get(position);
         holder.tvJudul.setText(wishItem.judul);
         holder.tvOverview.setText(wishItem.overview);
+
+        Toast.makeText(context, "Press 'X' button to delete from wishlist ", Toast.LENGTH_LONG).show();
 
         Glide
                 .with(context)
@@ -61,6 +60,7 @@ public class SavedAdapter extends RecyclerView.Adapter<SavedAdapter.ViewHolder> 
 
                 Snackbar.make(view, "DELETED", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+
             }
         });
 

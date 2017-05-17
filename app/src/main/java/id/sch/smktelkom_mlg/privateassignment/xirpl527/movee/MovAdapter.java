@@ -56,6 +56,7 @@ public class MovAdapter extends RecyclerView.Adapter<MovAdapter.ViewHolder> {
                 singleBlogIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 singleBlogIntent.putExtra("blog_id", position);
                 context.startActivity(singleBlogIntent);
+                Toast.makeText(context, "Press 'Love' button to add to wishlist ", Toast.LENGTH_LONG).show();
             }
         });
     }

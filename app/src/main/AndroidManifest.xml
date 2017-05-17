@@ -9,15 +9,6 @@
         android:label="Movee"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <meta-data
-            android:name="DATABASE"
-            android:value="saved.db" />
-        <meta-data
-            android:name="VERSION"
-            android:value="8" />
-        <meta-data
-            android:name="DOMAIN_PACKAGE_NAME"
-            android:value="id.sch.smktelkom_mlg.privateassignment.xirpl527.movee" />
         <activity
             android:name=".MainActivity"
             android:label="Movee"
