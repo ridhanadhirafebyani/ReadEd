@@ -22,7 +22,7 @@ Tabs Navigation
 [Sugar ORM Local Database](http://satyan.github.io/sugar/) <br>
 
 # Deskripsi
-Aplikasi Movee adalah aplikasi yang berisi sinopsis atau ringkasan film-film yang cocok digunakan user yang ingin mencari referensi film untuk ditonton.
+Aplikasi Movee adalah aplikasi yang berisi sinopsis atau ringkasan film-film yang cocok digunakan user yang ingin mencari referensi film untuk ditonton. Dengan data yang bersumber dari The Movie Database (TMDb) aplikasi ini menampilkan sinopsis-sinopsis film yang memilikirating tinggi dan layak ditonton.
 
 <br>
 
